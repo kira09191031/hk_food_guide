@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodieMap HK | Hong Kong Food Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-500 { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white h-screen overflow-hidden relative">
+
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0 flex justify-center items-center">
+        <!-- Ensure hong-kong-food.jpg is in the same directory -->
+        <img src="hong-kong-food.jpg" alt="Hong Kong Food" class="w-full h-full object-cover object-center opacity-60 scale-105 animate-[pulse_10s_ease-in-out_infinite]" style="animation: zoomEffect 20s infinite alternate;">
+        <!-- Darker overlay: changed to uniform bg-black/70 as requested -->
+        <div class="absolute inset-0 bg-black/70"></div>
+    </div>
+
+    <!-- Main Content -->
+    <!-- Adjusted padding-bottom (pb-16 -> pb-16) to keep content up slightly -->
+    <div class="relative z-10 h-full flex flex-col justify-end items-center text-center px-6 pb-16">
+        
+        <!-- Logo / Brand -->
+        <div class="absolute top-8 left-8 flex items-center gap-2 fade-in-up">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"></path><line x1="6" y1="17" x2="18" y2="17"></line></svg>
+            <span class="text-xl font-bold tracking-widest text-white/90">FOODIEMAP HK</span>
+        </div>
+
+        <!-- Tagline (Kept at top area) -->
+        <div class="absolute top-56 left-0 right-0 mx-auto w-full text-center fade-in-up delay-100">
+            <p class="text-red-500 font-medium tracking-[0.2em] uppercase text-xl md:text-2xl">
+                The Ultimate Culinary Journey
+            </p>
+        </div>
+
+        <!-- Hero Text (Title & Button) -->
+        <div class="max-w-7xl mx-auto space-y-6">
+            
+            <!-- Hero Title -->
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight fade-in-up delay-300 whitespace-nowrap">
+                Unlock Hong Kong <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 italic">with your taste buds.</span>
+            </h1>
+
+            <!-- CTA Button -->
+            <div class="pt-4 fade-in-up" style="animation-delay: 0.7s;">
+                <a href="hk_food_guide.html" class="group relative inline-flex items-center gap-3 px-10 py-4 bg-red-700 hover:bg-red-600 text-white rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]">
+                    <span class="text-lg font-medium tracking-wide">Start Exploring</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Slow Zoom Effect for Background */
+        @keyframes zoomEffect {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
+</body>
+</html>
